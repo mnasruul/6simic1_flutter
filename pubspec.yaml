@@ -75,6 +75,22 @@ flutter:
     - images/h.png
     - images/i.png
     - images/j.png
+    - images/j.png
+    - images/j.png
+    - images/j.png
+    - images/j.png
+    - res/images/listrik.png
+    - res/images/pulsa.png
+    - res/images/paket_data.png
+    - res/images/pasca_bayar.png
+    - res/images/bpjs.png
+    - res/images/tv_kabel.png
+    - res/images/asuransi.png
+    - res/images/lihat_semua.png
+    - images/1.avif
+    - res/images/listrik.png
+    - res/images/listrik.png
+    - res/images/listrik.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
