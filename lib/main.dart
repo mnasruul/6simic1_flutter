@@ -203,7 +203,7 @@ class MyDashboard extends StatelessWidget {
       ),
     );
   }
-
+ScrollController _controller = new ScrollController();
   @override
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
@@ -217,7 +217,8 @@ class MyDashboard extends StatelessWidget {
     //           );
     return Scaffold(
       appBar: AppBar(title: const Text("Beranda")),
-      body: SingleChildScrollView(
+      body: SafeArea(
+          child: SingleChildScrollView(
         child: Column(
           children: [
             CarouselSlider.builder(
@@ -261,100 +262,105 @@ class MyDashboard extends StatelessWidget {
               ],
             )),
             SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/listrik.png",
-                  text: "PLN",
-                ),
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/pulsa.png",
-                  text: "Pulsa",
-                ),
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/paket_data.png",
-                  text: "Paket Data",
-                ),
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/pasca_bayar.png",
-                  text: "Pasca Bayar",
-                ),
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/bpjs.png",
-                  text: "BPJS",
-                ),
-              ],
-            )),
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    mainMenuIcon(
+                      deviceSize: deviceSize,
+                      src: "res/images/listrik.png",
+                      text: "PLN",
+                    ),
+                    mainMenuIcon(
+                      deviceSize: deviceSize,
+                      src: "res/images/pulsa.png",
+                      text: "Pulsa",
+                    ),
+                    mainMenuIcon(
+                      deviceSize: deviceSize,
+                      src: "res/images/paket_data.png",
+                      text: "Paket Data",
+                    ),
+                    mainMenuIcon(
+                      deviceSize: deviceSize,
+                      src: "res/images/pasca_bayar.png",
+                      text: "Pasca Bayar",
+                    ),
+                    mainMenuIcon(
+                      deviceSize: deviceSize,
+                      src: "res/images/bpjs.png",
+                      text: "BPJS",
+                    ),
+                  ],
+                )),
             SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/tv_kabel.png",
-                  text: "TV Kabel",
-                ),
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/asuransi.png",
-                  text: "Asuransi",
-                ),
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/lihat_semua.png",
-                  text: "Lihat Semua",
-                ),
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/asuransi.png",
-                  text: "Asuransi",
-                ),
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/lihat_semua.png",
-                  text: "Lihat Semua",
-                ),
-              ],
-            )),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/tv_kabel.png",
-                  text: "TV Kabel",
-                ),
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/asuransi.png",
-                  text: "Asuransi",
-                ),
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/lihat_semua.png",
-                  text: "Lihat Semua",
-                ),
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/asuransi.png",
-                  text: "Asuransi",
-                ),
-                mainMenuIcon(
-                  deviceSize: deviceSize,
-                  src: "res/images/lihat_semua.png",
-                  text: "Lihat Semua",
-                ),
-              ],
-            ),
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    mainMenuIcon(
+                      deviceSize: deviceSize,
+                      src: "res/images/tv_kabel.png",
+                      text: "TV Kabel",
+                    ),
+                    mainMenuIcon(
+                      deviceSize: deviceSize,
+                      src: "res/images/asuransi.png",
+                      text: "Asuransi",
+                    ),
+                    mainMenuIcon(
+                      deviceSize: deviceSize,
+                      src: "res/images/lihat_semua.png",
+                      text: "Lihat Semua",
+                    ),
+                    mainMenuIcon(
+                      deviceSize: deviceSize,
+                      src: "res/images/asuransi.png",
+                      text: "Asuransi",
+                    ),
+                    mainMenuIcon(
+                      deviceSize: deviceSize,
+                      src: "res/images/lihat_semua.png",
+                      text: "Lihat Semua",
+                    ),
+                  ],
+                )),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  mainMenuIcon(
+                    deviceSize: deviceSize,
+                    src: "res/images/tv_kabel.png",
+                    text: "TV Kabel",
+                  ),
+                  mainMenuIcon(
+                    deviceSize: deviceSize,
+                    src: "res/images/asuransi.png",
+                    text: "Asuransi",
+                  ),
+                  mainMenuIcon(
+                    deviceSize: deviceSize,
+                    src: "res/images/lihat_semua.png",
+                    text: "Lihat Semua",
+                  ),
+                  mainMenuIcon(
+                    deviceSize: deviceSize,
+                    src: "res/images/asuransi.png",
+                    text: "Asuransi",
+                  ),
+                  mainMenuIcon(
+                    deviceSize: deviceSize,
+                    src: "res/images/lihat_semua.png",
+                    text: "Lihat Semua",
+                  ),
+                ],
+              ),
+            )
           ],
         ),
-      ),
+      )),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(
