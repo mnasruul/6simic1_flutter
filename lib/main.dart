@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           '/zoom': (ctx) => EnlargeStrategyZoomDemo(),
         },
         // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-        home: const MyDashboard());
+        home: MyDashboard());
   }
 }
 
@@ -185,17 +185,17 @@ class MyDashboard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            child: CircleAvatar(
-              child: Image.asset(src),
-              foregroundColor: Colors.red,
-              backgroundColor: Colors.white,
-            ),
             width: 80.0,
             height: 80.0,
-            padding: EdgeInsets.all(2.0), // borde width
+            padding: const EdgeInsets.all(2.0), // borde width
             decoration: BoxDecoration(
               color: Colors.grey[200], // border color
               shape: BoxShape.circle,
+            ),
+            child: CircleAvatar(
+              foregroundColor: Colors.red,
+              backgroundColor: Colors.white,
+              child: Image.asset(src),
             ),
           ),
           Text(text),
@@ -203,7 +203,7 @@ class MyDashboard extends StatelessWidget {
       ),
     );
   }
-ScrollController _controller = new ScrollController();
+
   @override
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
@@ -239,28 +239,105 @@ ScrollController _controller = new ScrollController();
               height: 10,
             ),
             SingleChildScrollView(
-                child: Row(
-              children: [
-                Container(
-                  child: const Card(
-                    child: SizedBox(
-                      height: 10,
+              child:
+                  //  Row(
+                  //   children: [
+                  //     Container(
+                  //       child: const Card(
+                  //         child: SizedBox(
+                  //           height: 10,
+                  //         ),
+                  //       ),
+                  //       height: height * 0.1,
+                  //       width: width * 0.5,
+                  //     ),
+                  //     Container(
+                  //       height: height * 0.1,
+                  //       width: width * 0.5,
+                  //       child: const Card(
+                  //         child: SizedBox(
+                  //           height: 10,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // )
+                  Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 50,
+                    width: 200,
+                    // You can set width of container here
+                    decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        bottomLeft: Radius.circular(15),
+                      ),
+                    ),
+                    child: Padding(
+                      // Following padding to give space around the icon and text
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            '../images/running.png',
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          const Text(
+                            "Activity",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  height: height * 0.1,
-                  width: width * 0.5,
-                ),
-                Container(
-                  height: height * 0.1,
-                  width: width * 0.5,
-                  child: const Card(
-                    child: SizedBox(
-                      height: 10,
+                  Container(
+                    height: 50,
+                    width: 200,
+                    decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(15),
+                        bottomRight: Radius.circular(15),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            '../images/medal.png',
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Text(
+                            "Achievement",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
-            )),
+                ],
+              ),
+            ),
             SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
